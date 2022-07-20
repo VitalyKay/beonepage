@@ -11,7 +11,7 @@ deploy:
   script: 
     - git clone git@gitlab:testproj/beonepage.git ~/beonepage
     - scp -r ~/beonepage wordpress:~/beonepage
-    - ssh wordpress sudo mv ~/beonepage /var/www/html/www.vitalykay-netology-diplom.tk/wp-content
+    - ssh wordpress sudo mv ~/beonepage/ /var/www/html/www.vitalykay-netology-diplom.tk/wp-content
   only:
     - master
     - tags
