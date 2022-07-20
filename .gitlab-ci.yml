@@ -9,7 +9,8 @@ deploy:
   stage: deploy
   script: 
     - git clone git@gitlab:testproj/beonepage.git
-    - scp -r ~/beonepage wordpress:/var/www/html/www.vitalykay-netology-diplom.tk/wp_content
+    - scp -r ~/beonepage wordpress:~/beonepage
+    - ssh wordpress sudo mv ~/beonepage /var/www/html/www.vitalykay-netology-diplom.tk/wp_content
   only:
     - master
     - tags
