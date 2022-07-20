@@ -4,13 +4,13 @@ variables:
 before_script:
   - git config --global user.email "vitalykay@gmail.com"
   - git config --global user.name "vitalykay"
-  - rm -r -f ~/beonepage
+  - rm -r -f ~/testproj
 
 deploy: 
   stage: deploy
   script: 
-    - git clone git@gitlab:testproj/beonepage.git ~
-    - scp -r ~/beonepage wordpress:~/beonepage
+    - git clone git@gitlab:testproj/beonepage.git ~/testproj
+    - scp -r ~/testproj/beonepage wordpress:~/beonepage
     - ssh wordpress sudo cp -rlf ~/beonepage/ /var/www/html/www.vitalykay-netology-diplom.tk/wp-content
   only:
     - master
