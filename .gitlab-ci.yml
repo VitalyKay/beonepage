@@ -9,7 +9,7 @@ before_script:
 deploy: 
   stage: deploy
   script: 
-    - git clone git@gitlab:testproj/beonepage.git ~/beonepage
+    - git clone git@gitlab:testproj/beonepage.git ~
     - scp -r ~/beonepage wordpress:~/beonepage
     - ssh wordpress sudo cp -rlf ~/beonepage/ /var/www/html/www.vitalykay-netology-diplom.tk/wp-content
   only:
