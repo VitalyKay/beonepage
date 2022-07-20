@@ -2,15 +2,14 @@ stages:
   - deploy
 
 before_script:
-  - sudo yum install git
   - git config --global user.email "vitalykay@gmail.com"
   - git config --global user.name "vitalykay"
 
 deploy: 
   stage: deploy
   script: 
-    - git clone git@gitlab.vitalykay-netology-diplom.tk:testproj/beonpage.git
-    - scp -r ~/beonpage wordpress-node:/var/www/html/www.vitalykay-netology-diplom.tk/wp_content
+    - git clone git@gitlab:testproj/beonepage.git
+    - scp -r ~/beonepage wordpress:/var/www/html/www.vitalykay-netology-diplom.tk/wp_content
 
   only:
     - tags
