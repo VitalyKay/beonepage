@@ -8,4 +8,5 @@ deploy:
     - git clone git@gitlab:testproj/beonepage.git
     - scp -r ~/beonepage wordpress:/var/www/html/www.vitalykay-netology-diplom.tk/wp_content
   only:
+    - master
     - tags
