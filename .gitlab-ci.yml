@@ -4,6 +4,7 @@ variables:
 before_script:
   - git config --global user.email "vitalykay@gmail.com"
   - git config --global user.name "vitalykay"
+  - rm -r ~/beonepage
 
 deploy: 
   stage: deploy
